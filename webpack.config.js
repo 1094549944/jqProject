@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-15 16:27:23
+ * @Last Modified time: 2018-08-15 16:57:40
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -10,7 +10,7 @@
 * @Last Modified by: jiaxinying 
 * @Last Modified time: 2018-08-15 16:26:05
 * 处理html的插件，是支持 ejs模板的*/
-
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -29,7 +29,7 @@ var getHtmlConfig = function (name, title) {
 };
 
 var config = {
-  mode: 'production',
+  mode: 'dev' === WEBPACK_ENV ? 'development' : 'production',
   entry: {
     common: './src/page/common/index.js',
     index: './src/page/index/index.js',
@@ -37,7 +37,8 @@ var config = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
+    publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
   },
   externals: {
     'jquery': 'window.jQuery'
@@ -53,6 +54,15 @@ var config = {
           minChunks: 2
         }
       }
+    }
+  },
+  resolve: {
+    alias: {
+      node_modules: __dirname + '/node_modules',
+      util: __dirname + './src/util',
+      page: __dirname + './src/page',
+      service: __dirname + './src/service',
+      image: __dirname + './src/image'
     }
   },
   plugins: [
@@ -81,8 +91,39 @@ var config = {
             removeAttributeQuotes: false
           }
         }
+      },
+      {
+        //图片配置
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 2048,
+            name: 'resource/[name].[ext]'
+          }
+        }]
+      }, {
+        //字体图标的配置
+        test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: 'resource/[name].[ext]'
+          }
+        }]
       }
     ]
+
+  },
+  devServer: {
+    port: 8080,
+    proxy: {
+      '**/*.do': {
+        target: 'http://test.happymmall.com/',
+        changeOrigin: true
+      }
+    }
   }
 }
 module.exports = config
