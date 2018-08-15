@@ -20,3 +20,26 @@ https://static.mukewang.com/img/5981a6a70001362410504931.png
 
 # 《手把手从零打造企业级电商平台-前端实战》学习指南
 https://www.imooc.com/article/26428
+
+
+
+## 3-4 学习npm 和webpack 的初始化
+执行
+webpack --mode development ./src/page/index/index.js -o ./dist/app.js
+
+会得到正确结果
+参考地址
+https://www.imooc.com/qadetail/205218
+
+
+如果想执行
+
+webpack ./src/page/index/index.js -o ./dist/app.js
+
+则需要在webpack.config.js 中添加
+
+ module.exports = {
+   mode: 'production'
+ };
+
+ 

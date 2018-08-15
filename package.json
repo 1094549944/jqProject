@@ -1,9 +1,10 @@
 {
-  "name": "jqproject",
+  "name": "jsproject",
   "version": "1.0.0",
   "description": "电商完整",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/.bin/webpack-dev-server",
     "dev_win": "./node_modules/.bin/webpack-dev-server",
     "dist": "WEBPACK_ENV=online ./node_modules/.bin/webpack -p",
@@ -20,19 +21,6 @@
   },
   "homepage": "https://github.com/1094549944/jqProject#readme",
   "devDependencies": {
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^1.1.11",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
-    "style-loader": "^0.20.3",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
-  },
-  "dependencies": {
-    "font-awesome": "^4.7.0",
-    "hogan.js": "^3.0.2"
+    "webpack": "^4.16.5"
   }
 }
