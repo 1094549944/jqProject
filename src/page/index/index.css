@@ -1,3 +1,5 @@
 body {
-  background: url('../../image/icon/loading.gif')
+  background: #ccc;
+  font-size: 20px;
+  color: red
 }

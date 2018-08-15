@@ -63,5 +63,7 @@ https://www.cnblogs.com/ufex/p/8758792.html
 
 https://uinika.github.io/web/webpack.html#/SplitChunksPlugin（推荐）
 
+## 全局安装webpack-dev-server
+ npm install webpack-dev-server@3.1.1 -g
 
- 
+## 如果在使用webpack-dev-server提示要安装webpack-cli的时候，直接安装就好

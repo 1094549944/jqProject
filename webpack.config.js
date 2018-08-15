@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-15 16:57:40
+ * @Last Modified time: 2018-08-15 17:35:53
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -10,6 +10,9 @@
 * @Last Modified by: jiaxinying 
 * @Last Modified time: 2018-08-15 16:26:05
 * 处理html的插件，是支持 ejs模板的*/
+
+
+//环境变量的配置  （启动服务的时候加上参数）
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -36,8 +39,10 @@ var config = {
     login: './src/page/login/index.js'
   },
   output: {
+    //生成文件的路径
     path: __dirname + '/dist',
     filename: 'js/[name].js',
+    //访问文件的路径
     publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
   },
   externals: {
