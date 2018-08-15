@@ -54,4 +54,14 @@ var config = {
   }
 }
 module.exports = config
+
+## 配置webpack 的optimization
+
+https://uinika.github.io/web/webpack.html
+
+https://www.cnblogs.com/ufex/p/8758792.html
+
+https://uinika.github.io/web/webpack.html#/SplitChunksPlugin（推荐）
+
+
  
