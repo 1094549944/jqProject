@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-15 17:35:53
+ * @Last Modified time: 2018-08-15 18:53:27
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -64,10 +64,10 @@ var config = {
   resolve: {
     alias: {
       node_modules: __dirname + '/node_modules',
-      util: __dirname + './src/util',
-      page: __dirname + './src/page',
-      service: __dirname + './src/service',
-      image: __dirname + './src/image'
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      image: __dirname + '/src/image'
     }
   },
   plugins: [
@@ -122,7 +122,7 @@ var config = {
 
   },
   devServer: {
-    port: 8080,
+    port: 8088,
     proxy: {
       '**/*.do': {
         target: 'http://test.happymmall.com/',
