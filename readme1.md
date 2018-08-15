@@ -41,5 +41,17 @@ webpack ./src/page/index/index.js -o ./dist/app.js
  module.exports = {
    mode: 'production'
  };
-
+## 配置webpack基础后，执行webpack
+var config = {
+  mode: 'production',
+  entry: {
+    index: './src/page/index/index.js',
+    login: './src/page/login/index.js'
+  },
+  output: {
+    path: __dirname + '/dist',
+    filename: 'js/[name].js'
+  }
+}
+module.exports = config
  
