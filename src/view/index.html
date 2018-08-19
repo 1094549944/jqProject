@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<%= require('html-loader!./layout/html-head.html')  %>
 
-  <body id="body">
-    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<head>
+  <%= require('html-loader!./layout/head-common.html')  %>
+    <title>MMall电商平台 - 最NX的购物网站</title>
+</head>
 
-  </body>
+<body>
+  <%= require('html-loader!./layout/nav.html')  %>
+
+    <div>
+      <i class="fa fa-user"></i>
+    </div>
+    <%= require('html-loader!./layout/footer.html')  %>
+</body>
 
 </html>

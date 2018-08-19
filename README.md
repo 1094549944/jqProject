@@ -78,5 +78,7 @@ https://gitee.com/imooccode/happymmallwiki/wikis/Home
 ## node 版本：v6.12.3
 ## 使用了charles 代理服务器，用来解决跨域问题
 
+## 改成了使用webpack-dev-server 来解决跨域问题
+
 
 

@@ -1,0 +1,20 @@
+/*
+ * @Author: jiaxinying 
+ * @Date: 2018-08-16 19:09:34 
+ * @Last Modified by: jiaxinying
+ * @Last Modified time: 2018-08-16 19:39:46
+ */
+
+.nav-simple {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+.nav-simple .logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #c60023;
+  text-decoration: none;
+}

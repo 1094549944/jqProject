@@ -1,0 +1,135 @@
+/*
+ * @Author: jiaxinying 
+ * @Date: 2018-08-16 18:46:42 
+ * @Last Modified by: jiaxinying
+ * @Last Modified time: 2018-08-16 18:59:32
+ * 通用样式，要打包到common/index.js里面
+ * 使用css的reset 网址：https://meyerweb.com/eric/tools/css/reset/
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 自定义样式 */
+
+body {
+  background: #f6f6f6;
+  font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
+}
+
+/* 定宽布局 */
+
+.w {
+  width: 1080px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 用于适配 ，可以兼容IE,@Media有兼容问题 */
+
+.large .w {
+  width: 1600px
+}
+
+/* 全局通用样式 */
+
+/* 隐藏类 */
+
+.hide {
+  display: none;
+}
+
+/* 超链样式 */
+
+.link {
+  color: #999;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #e80012;
+}
+
+.link-text {
+  color: #999;
+  text-decoration: none;
+}
+
+/* btn */
+
+.btn {
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border: none;
+  background: #c60023;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-mini {
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+/* loading */
+
+.loading {
+  margin: 10px auto;
+  display: block;
+  width: 65px;
+  height: 65px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: url(../../image/icon/loading.gif) no-repeat;
+  opacity: .6;
+}

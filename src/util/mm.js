@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 18:08:53 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-15 19:21:49
+ * @Last Modified time: 2018-08-16 18:36:16
  * 通用工具
  */
 
@@ -66,6 +66,34 @@ var _mm = {
       result = template.render(data)
     //render 输出
     return result
+  },
+  //成功提示
+  successTips: function (msg) {
+    alert('msg' || '操作成功')
+  },
+  //失败提示
+  successTips: function (msg) {
+    alert('msg' || '操作错误')
+  },
+  //字段的验证 支持费控，手机，邮箱的判断
+
+  validate: function (value, type) {
+    var value = $.trim(value)
+    //非空验证
+    if ('require' === type) {
+      return !!value
+    }
+    //手机号验证
+    if ('phone' === type) {
+      return /^1\d{10}$/.test(value)
+    }
+    // 邮箱格式验证
+    if ('email' === type) {
+      return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+    }
+  },
+  goHome: function () {
+    window.location.href = './index.html';
   }
 }
 
