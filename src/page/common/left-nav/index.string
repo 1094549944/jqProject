@@ -1,0 +1,11 @@
+{{#list}}
+{{#leftData}}
+  <li class="keywords-item">
+  {{#children}}
+   <a class="link" target="_blank" href="./list.html?keyword={{keyword}}">{{keyword}}</a>
+  {{/children}}
+ </li>
+{{/leftData}}
+{{/list}}
+
+

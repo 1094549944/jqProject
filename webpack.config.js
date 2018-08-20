@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-15 18:53:27
+ * @Last Modified time: 2018-08-20 19:22:55
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -97,26 +97,40 @@ var config = {
           }
         }
       },
+      /* 
+         * 【改动】：图片文件的加载方式变化，并和字体文件分开处理
+         */
+      // 图片的配置
       {
-        //图片配置
         test: /\.(png|jpg|gif)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 2048,
-            name: 'resource/[name].[ext]'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              /* 
+              * 【改动】：图片小于2kb的按base64打包
+              */
+              limit: 2048,
+              name: 'resource/[name].[ext]'
+            }
           }
-        }]
-      }, {
-        //字体图标的配置
+        ]
+      },
+      /* 
+      * 【改动】：字体文件的加载方式变化
+      */
+      // 字体图标的配置
+      {
         test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
-            name: 'resource/[name].[ext]'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'resource/[name].[ext]'
+            }
           }
-        }]
+        ]
       }
     ]
 

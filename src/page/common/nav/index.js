@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 11:52:01 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-19 22:23:34
+ * @Last Modified time: 2018-08-20 17:48:30
  * 头部文件， 需要在index/index.js中引用
  */
 'use strict'
@@ -51,7 +51,7 @@ var nav = {
     _cart.getCartCount(function (res) {
       $('.nav.not-login').hide().sublings('.user.login').show().find('.username').text(res.username)
     }, function (errMsg) {
-      _mm.errorTips(errMsg)
+
     })
   },
 

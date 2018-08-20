@@ -2,11 +2,11 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 18:57:51 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-18 15:22:38
+ * @Last Modified time: 2018-08-20 17:47:30
  */
 'use strict'
 var _mm = require('util/mm.js')
-_cart = {
+var _cart = {
   //获取购物车数量
   getCartCount: function (resolve, reject) {
     _mm.request({
