@@ -1,3 +1,10 @@
+/*
+ * @Author: jiaxinying 
+ * @Date: 2018-08-21 11:08:51 
+ * @Last Modified by:   jiaxinying 
+ * @Last Modified time: 2018-08-21 11:08:51 
+ * 左侧菜单和楼层
+ */
 'use strict'
 require('./index.css');
 var _mm = require('util/mm.js')
@@ -206,7 +213,7 @@ var data = {
       img: 'http://images.baixingliangfan.cn/shopGoodsImg/20171219/20171219104424_5513.jpg'
     }, {
       name: '半成品菜',
-      img: 'http://baixing.kuaihejiu.com/shopGoodsImg/20171213/20171213082037_1895.jpg'
+      img: 'http://images.baixingliangfan.cn/shopGoodsImg/20171229/20171229085948_3588.jpg'
     }, {
       name: '速冻专区',
       img: 'http://images.baixingliangfan.cn/shopGoodsImg/20180208/20180208143206_2666.jpg'

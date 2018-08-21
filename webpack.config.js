@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-20 19:22:55
+ * @Last Modified time: 2018-08-21 11:12:06
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -36,7 +36,8 @@ var config = {
   entry: {
     common: './src/page/common/index.js',
     index: './src/page/index/index.js',
-    login: './src/page/login/index.js'
+    login: './src/page/login/index.js',
+    result: './src/page/result/index.js'
   },
   output: {
     //生成文件的路径
@@ -76,6 +77,7 @@ var config = {
     //html模板的处理  getHtmlConfig方法封装在上面
     new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
     new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
   ],
   module: {
     rules: [
