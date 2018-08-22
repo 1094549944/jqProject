@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-21 11:12:06
+ * @Last Modified time: 2018-08-22 10:12:54
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -34,10 +34,15 @@ var getHtmlConfig = function (name, title) {
 var config = {
   mode: 'dev' === WEBPACK_ENV ? 'development' : 'production',
   entry: {
-    common: './src/page/common/index.js',
-    index: './src/page/index/index.js',
-    login: './src/page/login/index.js',
-    result: './src/page/result/index.js'
+    'common': './src/page/common/index.js',
+    'index': './src/page/index/index.js',
+    'user-login': './src/page/user-login/index.js',
+    'result': './src/page/result/index.js',
+    'user-register': './src/page/user-register/index.js',
+    'user-pass-reset': './src/page/user-pass-reset/index.js',
+    'user-center': './src/page/user-center/index.js',
+    'user-center-update': './src/page/user-center-update/index.js',
+    'user-pass-update': './src/page/user-pass-update/index.js'
   },
   output: {
     //生成文件的路径
@@ -76,8 +81,13 @@ var config = {
     new ExtractTextPlugin("css/[name].css"),
     //html模板的处理  getHtmlConfig方法封装在上面
     new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-    new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
     new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '个人信息编辑')),
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '密码更新'))
   ],
   module: {
     rules: [

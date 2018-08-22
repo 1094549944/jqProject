@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 11:52:01 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-20 17:48:30
+ * @Last Modified time: 2018-08-21 17:08:42
  * 头部文件， 需要在index/index.js中引用
  */
 'use strict'
@@ -10,6 +10,7 @@ require('./index.css')
 var _mm = require('util/mm.js')
 var _user = require('service/user-service.js')
 var _cart = require('service/cart-service.js')
+
 //导航条的功能
 var nav = {
   init: function () {
@@ -41,18 +42,21 @@ var nav = {
   //用户信息加载
   loadUserInfo: function () {
     _user.checkLogin(function (res) {
-      $('.user.not-login').hide().sublings('.user-login').show().find('.username').text(res.username)
+      console.log(res)
+      $('.user.not-login').hide().siblings('.user.login').show()
+        .find('.username').text(res.username)
     }, function (errMsg) {
+      console.log(errMsg)
       _mm.errorTips(errMsg)
     })
   },
   //商品购物车数量
   loadCartCount: function () {
     _cart.getCartCount(function (res) {
-      $('.nav.not-login').hide().sublings('.user.login').show().find('.username').text(res.username)
+      $('.nav .cart-count').text(res || 0)
     }, function (errMsg) {
-
-    })
+      $('.nav .cart-count').text(0)
+    });
   },
 
 

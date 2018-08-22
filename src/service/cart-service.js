@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 18:57:51 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-20 17:47:30
+ * @Last Modified time: 2018-08-21 15:38:52
  */
 'use strict'
 var _mm = require('util/mm.js')
@@ -10,7 +10,7 @@ var _cart = {
   //获取购物车数量
   getCartCount: function (resolve, reject) {
     _mm.request({
-      url: _mm.getServerUrl('/cart/get_cart_project_count.do'),
+      url: _mm.getServerUrl('/cart/get_cart_product_count.do'),
       success: resolve,
       error: reject
     })

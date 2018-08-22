@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 18:08:53 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-16 18:36:16
+ * @Last Modified time: 2018-08-21 17:08:24
  * 通用工具
  */
 
@@ -69,11 +69,11 @@ var _mm = {
   },
   //成功提示
   successTips: function (msg) {
-    alert('msg' || '操作成功')
+    alert(msg || '操作成功')
   },
   //失败提示
-  successTips: function (msg) {
-    alert('msg' || '操作错误')
+  errorTips: function (msg) {
+    alert(msg || '操作错误')
   },
   //字段的验证 支持费控，手机，邮箱的判断
 

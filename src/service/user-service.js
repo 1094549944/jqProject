@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 14:43:45 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-17 18:10:53
+ * @Last Modified time: 2018-08-21 17:04:46
  */
 var _mm = require('util/mm.js')
 var _user = {
@@ -30,7 +30,9 @@ var _user = {
   checkLogin: function (resolve, reject) {
     _mm.request({
       url: _mm.getServerUrl('/user/get_user_info.do'),
-      method: 'POST'
+      method: 'POST',
+      success: resolve,
+      error: reject
     })
   },
   //检查用户名
@@ -41,6 +43,7 @@ var _user = {
         type: 'username',
         str: username
       },
+      method: 'POST',
       success: resolve,
       error: reject
     })
@@ -61,7 +64,7 @@ var _user = {
   checkAnswer: function (userInfo, resolve, reject) {
     _mm.request(
       {
-        url: _mm.getServerUrl('/user/forget_reset_password.do'),
+        url: _mm.getServerUrl('/user/forget_check_answer.do'),
         data: userInfo,
         method: 'POST',
         success: resolve,
@@ -107,6 +110,14 @@ var _user = {
       success: resolve,
       error: reject
     })
+  },   // 登出
+  logout: function (resolve, reject) {
+    _mm.request({
+      url: _mm.getServerUrl('/user/logout.do'),
+      method: 'POST',
+      success: resolve,
+      error: reject
+    });
   }
 }
 module.exports = _user
