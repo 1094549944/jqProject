@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-17 11:52:01 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-21 17:08:42
+ * @Last Modified time: 2018-08-22 11:21:15
  * 头部文件， 需要在index/index.js中引用
  */
 'use strict'
@@ -42,7 +42,6 @@ var nav = {
   //用户信息加载
   loadUserInfo: function () {
     _user.checkLogin(function (res) {
-      console.log(res)
       $('.user.not-login').hide().siblings('.user.login').show()
         .find('.username').text(res.username)
     }, function (errMsg) {

@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-22 10:12:54
+ * @Last Modified time: 2018-08-23 14:13:48
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -42,7 +42,10 @@ var config = {
     'user-pass-reset': './src/page/user-pass-reset/index.js',
     'user-center': './src/page/user-center/index.js',
     'user-center-update': './src/page/user-center-update/index.js',
-    'user-pass-update': './src/page/user-pass-update/index.js'
+    'user-pass-update': './src/page/user-pass-update/index.js',
+    'about': './src/page/about/index.js',
+    'list': './src/page/list/index.js',
+    'detail': './src/page/detail/index.js',
   },
   output: {
     //生成文件的路径
@@ -87,7 +90,10 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '个人信息编辑')),
-    new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '密码更新'))
+    new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '密码更新')),
+    new HtmlWebpackPlugin(getHtmlConfig('about', '关于MMall')),
+    new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
   ],
   module: {
     rules: [
