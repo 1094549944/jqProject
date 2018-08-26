@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-23 14:13:48
+ * @Last Modified time: 2018-08-26 22:27:18
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -46,6 +46,7 @@ var config = {
     'about': './src/page/about/index.js',
     'list': './src/page/list/index.js',
     'detail': './src/page/detail/index.js',
+    'cart': './src/page/cart/index.js',
   },
   output: {
     //生成文件的路径
@@ -93,7 +94,8 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '密码更新')),
     new HtmlWebpackPlugin(getHtmlConfig('about', '关于MMall')),
     new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
-    new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情'))
+    new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
+    new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
   ],
   module: {
     rules: [
@@ -154,6 +156,7 @@ var config = {
 
   },
   devServer: {
+    disableHostCheck: true,
     port: 8088,
     proxy: {
       '**/*.do': {
