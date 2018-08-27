@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-27 18:39:26
+ * @Last Modified time: 2018-08-27 18:50:37
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -164,8 +164,8 @@ var config = {
 
   },
   devServer: {
-    // disableHostCheck: true,
-    // port: 8088,
+    disableHostCheck: true,
+    port: 8088,
     proxy: {
       '**/*.do': {
         target: 'http://test.happymmall.com/',
