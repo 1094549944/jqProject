@@ -2,7 +2,7 @@
 * @Author: Rosen
 * @Date:   2017-05-30 16:51:25
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-23 16:02:42
+ * @Last Modified time: 2018-08-27 14:59:25
 */
 
 'use strict';
@@ -49,11 +49,13 @@ var page = {
     });
     // 商品的全选 / 取消全选
     $(document).on('click', '.cart-select-all', function () {
+      console.log('点击了')
       var $this = $(this);
-      // 全选
+
       if ($this.is(':checked')) {
         _cart.selectAllProduct(function (res) {
           _this.renderCart(res);
+          console.log(res)
         }, function (errMsg) {
           _this.showCartError();
         });
@@ -62,6 +64,7 @@ var page = {
       else {
         _cart.unselectAllProduct(function (res) {
           _this.renderCart(res);
+          console.log(res)
         }, function (errMsg) {
           _this.showCartError();
         });

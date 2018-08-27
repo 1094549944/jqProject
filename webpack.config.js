@@ -2,7 +2,7 @@
  * @Author: jiaxinying 
  * @Date: 2018-08-15 14:18:18 
  * @Last Modified by: jiaxinying
- * @Last Modified time: 2018-08-26 22:27:18
+ * @Last Modified time: 2018-08-27 18:39:26
  * 配置多入口  引入jquery 并配置 公共模块加载 css 单独打包 html 打包
  */
 /* * @Author: jiaxinying 
@@ -47,6 +47,10 @@ var config = {
     'list': './src/page/list/index.js',
     'detail': './src/page/detail/index.js',
     'cart': './src/page/cart/index.js',
+    'order-confirm': './src/page/order-confirm/index.js',
+    'payment': './src/page/payment/index.js',
+    'order-list': './src/page/order-list/index.js',
+    'order-detail': './src/page/order-detail/index.js'
   },
   output: {
     //生成文件的路径
@@ -95,7 +99,11 @@ var config = {
     new HtmlWebpackPlugin(getHtmlConfig('about', '关于MMall')),
     new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
     new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
-    new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
+    new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+    new HtmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+    new HtmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情'))
   ],
   module: {
     rules: [
@@ -156,8 +164,8 @@ var config = {
 
   },
   devServer: {
-    disableHostCheck: true,
-    port: 8088,
+    // disableHostCheck: true,
+    // port: 8088,
     proxy: {
       '**/*.do': {
         target: 'http://test.happymmall.com/',
